@@ -1,0 +1,16 @@
+{
+  "contatos": [
+    {
+      "nome": "Alini",
+      "email": "email.com",
+      "telefone": "4343434343",
+      "id": 1
+    },
+    {
+      "nome": "Pamela",
+      "email": "pamela@email.com",
+      "telefone": "410988402482938",
+      "id": 2
+    }
+  ]
+}

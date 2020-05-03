@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-body">
+    <button class="btn btn-primary" routerLink="/cadastro">Novo contato</button>
+  </div>
+</div>
+<table class="table table-bordered" >
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contato of contatos">
+        <th scope="row">{{contato.id}}</th>
+        <td>{{contato.nome}}</td>
+        <td>{{contato.email}}</td>
+        <td>{{contato.telefone}}</td>
+        <td>
+          <button style="margin-right: 5px" class="btn btn-danger" routerLink="/contatos/editar/{{contato.id}}">Editar</button>
+          <button type="button" class="btn btn-warning" routerLink="/contatos/remover/{{contato.id}}">Deletar</button>
+        </td>
+      </tr>
+  </table>
+  

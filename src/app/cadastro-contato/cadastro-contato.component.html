@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-body">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Nome</label>
+            <input type="text" class="form-control" placeholder="Digite seu nome.." [(ngModel)]="contato.nome" name="nome">
+          </div>
+          <div class="form-group col-md-6">
+            <label >Email</label>
+            <input type="email" class="form-control" placeholder="email@email.com" [(ngModel)]="contato.email" name="email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label >Telefone</label>
+          <input type="text" class="form-control" placeholder="(41) 99741-0242" [(ngModel)]="contato.telefone" name="telefone">
+        </div>
+        <button style="margin-right: 5px;" class="btn btn-primary" (click)="cadastrarContato()">Salvar</button>
+          <button class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+      </form>
+    </div>
+ 
+      
+    
+  </div>
+
+ 
