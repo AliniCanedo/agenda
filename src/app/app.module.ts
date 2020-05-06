@@ -6,30 +6,34 @@ import { AppComponent } from './app.component';
 import { ContatoComponent } from './contato/contato.component';
 import { HttpClientModule} from '@angular/common/http';
 import { CadastroContatoComponent } from './cadastro-contato/cadastro-contato.component';
-import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { EditarContatoComponent } from './editar-contato/editar-contato.component';
 import { RemoverContatoComponent } from './remover-contato/remover-contato.component'
 
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { LoginComponent } from './login/login.component'; 
+import { AuthService } from './login/auth.service';
 @NgModule({
   declarations: [
     AppComponent,
     ContatoComponent,
     CadastroContatoComponent,
-    HeaderComponent,
     FooterComponent,
     EditarContatoComponent,
     RemoverContatoComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule, 
+    ReactiveFormsModule,
+    Ng2SearchPipeModule
+    
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

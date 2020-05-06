@@ -5,11 +5,11 @@ import { ContatoComponent } from './contato/contato.component';
 import { AppComponent } from './app.component';
 import { EditarContatoComponent } from './editar-contato/editar-contato.component';
 import { RemoverContatoComponent } from './remover-contato/remover-contato.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
-
-  {path: 'AppComponent', component: AppComponent},
+  {path: '', component: LoginComponent},
   {path: 'contatos', component: ContatoComponent},
   {path: 'cadastro', component: CadastroContatoComponent},
   {path: 'contatos/editar/:id', component: EditarContatoComponent},

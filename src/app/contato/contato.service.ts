@@ -22,8 +22,8 @@ export class ContatoService {
     return this.http.post<Contato>(this.url, contato);
   }
 
-  listaContatos(): Observable<Contato[]> {
-    return this.http.get<Contato[]>(this.url);
+  listaContatos(nome: string = ""): Observable<Contato[]> {
+    return this.http.get<Contato[]>(this.url, {params: {q: nome}});
   }
 
   listarById(id: string): Observable<Contato>{
@@ -39,5 +39,10 @@ export class ContatoService {
   removerContatos(id: number): Observable<Contato>{
     const url = `${this.url}/${id}`;
     return this.http.delete<Contato>(url);
+  }
+
+  pesquisar(id: string): Observable<Contato[]>{
+    const url = `${this.url}/${id}`
+    return this.http.get<Contato[]>(url)
   }
 }

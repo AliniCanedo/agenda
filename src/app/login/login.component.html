@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign In</h5>
+           
+              <div class="form-label-group">
+                <input ([ngModel])="usuario.nome" type="text" id="usuario" class="form-control"required autofocus>
+                <label class="active" for="usuario">Usuario </label>
+              </div>
+
+              <div class="form-label-group">
+                <input ([ngModel])="usuario.senha" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Senha</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" routerLink="/contatos" (click)="Fazerlogin()">Sign in</button>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
