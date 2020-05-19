@@ -14,10 +14,15 @@
         <a class="nav-link disabled" href="#" tabindex="-1" >Calendario</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search">
-      <button class="btn btn-success my-2 my-sm-0" type="submit">Pesquisar</button>
+    <form class="form-inline my-2 my-lg-0" style="margin-left: 30em;">
+      <input class="form-control" type="search" placeholder="Pesquisar" [formControl]="queryField">
+      <button class="btn btn-success my-2 my-sm-0" type="submit"(click)="pesquisar()">Pesquisar</button>
     </form>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login">Sair</a>
+      </li>
+    </ul>
   </div>
 </nav>
 
@@ -27,9 +32,8 @@
   </div>
 </div>
 
-<table class="table table-bordered" >
-  
-    <thead>
+<table class="table table-bordered" *ngIf="contatos$; else semContato" >
+    <thead >
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Nome</th>
@@ -39,15 +43,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let contato of contatos">
+      <tr *ngFor="let contato of contatos$ | async">
         <th scope="row">{{contato.id}}</th>
         <td>{{contato.nome}}</td>
         <td>{{contato.email}}</td>
         <td>{{contato.telefone}}</td>
+       
         <td>
           <button style="margin-right: 5px" class="btn btn-danger" routerLink="/contatos/editar/{{contato.id}}">Editar</button>
           <button type="button" class="btn btn-warning" routerLink="/contatos/remover/{{contato.id}}">Deletar</button>
         </td>
       </tr>
+    </tbody>
+   
   </table>
-  
+  <ng-template  #semContato>
+    <p style="text-align: center;"><strong>não existe contatos a serem mostrados!</strong></p>
+  </ng-template >

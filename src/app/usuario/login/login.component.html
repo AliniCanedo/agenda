@@ -4,18 +4,20 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Sign In</h5>
-           
               <div class="form-label-group">
-                <input ([ngModel])="usuario.nome" type="text" id="usuario" class="form-control"required autofocus>
                 <label class="active" for="usuario">Usuario </label>
+                <input ([ngModel])="usuario.nome" type="text" id="usuario" class="form-control" required autofocus>
               </div>
 
               <div class="form-label-group">
-                <input ([ngModel])="usuario.senha" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
                 <label for="inputPassword">Senha</label>
+                <input ([ngModel])="usuario.senha" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+           
               </div>
-              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" routerLink="/contatos" (click)="Fazerlogin()">Sign in</button>
-              
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" routerLink="/contatos" (click)="fazerlogin()">Sign in</button>
+          </div>
+          <div>
+            <a routerLink="cadastro-usuario">Faça seu cadastro</a>
           </div>
         </div>
       </div>

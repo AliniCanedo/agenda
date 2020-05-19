@@ -9,17 +9,15 @@ import { Usuario } from './usuario';
 })
 export class LoginComponent implements OnInit {
 
-  usuario: Usuario = new Usuario();
-
+  
+  usuario: Usuario;
+  
   constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
+   
   }
-
-  Fazerlogin(){
-    this.auth.login(this.usuario);
+  fazerlogin(){
+   this.auth.login(this.usuario);
   }
-  
-
-
 }
